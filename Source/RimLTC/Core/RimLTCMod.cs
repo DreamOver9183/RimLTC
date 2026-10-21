@@ -12,6 +12,16 @@ namespace RimLTC
             Settings = GetSettings<RimLTCSettings>();
         }
 
+        public override string SettingsCategory()
+        {
+            return "RimLTC_SettingsCategory".Translate();
+        }
+
+        public override void DoSettingsWindowContents(Rect inRect)
+        {
+            SettingsWindow.Draw(inRect, Settings);
+        }
+
         public override void WriteSettings()
         {
             base.WriteSettings();

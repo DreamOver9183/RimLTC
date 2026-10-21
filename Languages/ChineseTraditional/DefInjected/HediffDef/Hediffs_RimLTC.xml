@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <RimLTC_NaturalSenescence.label>生理衰竭</RimLTC_NaturalSenescence.label>
+  <RimLTC_NaturalSenescence.description>漫長一生走到盡頭，身體正緩慢且不可逆地衰退。從初期虛弱開始，進而臥床失能，最終安然壽終。\n\n定期的安寧照護可以延緩衰竭；照護的品質，也會在長者離世時被所有人記住。</RimLTC_NaturalSenescence.description>
+  <RimLTC_NaturalSenescence.comps.0.labelTendedWell>受到照護</RimLTC_NaturalSenescence.comps.0.labelTendedWell>
+  <RimLTC_NaturalSenescence.comps.0.labelSolidTendedWell>受到照護</RimLTC_NaturalSenescence.comps.0.labelSolidTendedWell>
+  <RimLTC_NaturalSenescence.stages.0.label>初期虛弱</RimLTC_NaturalSenescence.stages.0.label>
+  <RimLTC_NaturalSenescence.stages.1.label>臥床失能</RimLTC_NaturalSenescence.stages.1.label>
+  <RimLTC_NaturalSenescence.stages.2.label>臨終彌留</RimLTC_NaturalSenescence.stages.2.label>
+
+</LanguageData>

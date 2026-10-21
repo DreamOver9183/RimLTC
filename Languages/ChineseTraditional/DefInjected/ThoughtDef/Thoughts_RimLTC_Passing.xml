@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <RimLTC_NeglectedPassing.stages.0.label>孤獨枯萎</RimLTC_NeglectedPassing.stages.0.label>
+  <RimLTC_NeglectedPassing.stages.0.description>我們任由年邁的同伴在痛苦與無人照料的孤獨中死去。</RimLTC_NeglectedPassing.stages.0.description>
+
+  <RimLTC_RegretfulPassing.stages.0.label>遺憾離世</RimLTC_RegretfulPassing.stages.0.label>
+  <RimLTC_RegretfulPassing.stages.0.description>雖然最終還是走了，但至少最後一段路有人在旁照看，只是仍有些許遺憾。</RimLTC_RegretfulPassing.stages.0.description>
+
+  <RimLTC_PeacefulPassing.stages.0.label>安詳善終</RimLTC_PeacefulPassing.stages.0.label>
+  <RimLTC_PeacefulPassing.stages.0.description>看著長者安詳地走完一生。雖然仍感不捨，我們已經給予了溫暖的陪伴。</RimLTC_PeacefulPassing.stages.0.description>
+  <RimLTC_PeacefulPassing.stages.1.label>安詳善終</RimLTC_PeacefulPassing.stages.1.label>
+  <RimLTC_PeacefulPassing.stages.1.description>看著長者安詳地走完一生，我們已經給予了最溫暖的陪伴。</RimLTC_PeacefulPassing.stages.1.description>
+
+  <RimLTC_TranscendentPassing.stages.0.label>圓滿典範</RimLTC_TranscendentPassing.stages.0.label>
+  <RimLTC_TranscendentPassing.stages.0.description>長者毫無遺憾、充滿尊嚴地走完了傳奇的一生，這份生命的圓滿激勵了我們所有人。</RimLTC_TranscendentPassing.stages.0.description>
+
+</LanguageData>

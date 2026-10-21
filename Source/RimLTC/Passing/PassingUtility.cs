@@ -1,3 +1,4 @@
+using System.Linq;
 using RimWorld;
 using Verse;
 
@@ -38,7 +39,8 @@ namespace RimLTC
         public static void GivePassingThoughts(Pawn deceased, float satisfaction)
         {
             ThoughtDef def = ThoughtFor(satisfaction, out int stage);
-            foreach (Pawn pawn in PawnsFinder.AllMapsCaravansAndTravellingTransporters_Alive_Colonists)
+            // Copy: PawnsFinder returns a shared cached list.
+            foreach (Pawn pawn in PawnsFinder.AllMapsCaravansAndTravellingTransporters_Alive_Colonists.ToList())
             {
                 if (pawn == deceased || pawn.needs?.mood?.thoughts?.memories == null)
                 {

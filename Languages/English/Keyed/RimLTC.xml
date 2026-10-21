@@ -1,6 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
+  <!-- Mod settings -->
+  <RimLTC_SettingsCategory>RimLTC - Rim Long-Term Care</RimLTC_SettingsCategory>
+  <RimLTC_Settings_Section_Lifespan>Lifespan &amp; trigger</RimLTC_Settings_Section_Lifespan>
+  <RimLTC_Settings_TriggerMode_Absolute>Trigger at a fixed age</RimLTC_Settings_TriggerMode_Absolute>
+  <RimLTC_Settings_TriggerMode_LifeExpectancy>Trigger at a share of the race's life expectancy</RimLTC_Settings_TriggerMode_LifeExpectancy>
+  <RimLTC_Settings_TriggerAge>Trigger age: {0} years</RimLTC_Settings_TriggerAge>
+  <RimLTC_Settings_TriggerLifeExpectancy>Trigger at {0} of life expectancy</RimLTC_Settings_TriggerLifeExpectancy>
+  <RimLTC_Settings_AnimalsUseLifeExpectancy>Animals always use their life expectancy.</RimLTC_Settings_AnimalsUseLifeExpectancy>
+  <RimLTC_Settings_AgeStdDev>Individual variation (std. dev.): ±{0} years</RimLTC_Settings_AgeStdDev>
+  <RimLTC_Settings_AgeStdDev_Tip>Each pawn's trigger age is offset by a normally distributed amount, so elders of the same age do not all decline at once.</RimLTC_Settings_AgeStdDev_Tip>
+  <RimLTC_Settings_UntendedSurvivalDays>Survival without care: {0} days</RimLTC_Settings_UntendedSurvivalDays>
+  <RimLTC_Settings_UntendedSurvivalDays_Tip>How long natural senescence takes to run its course with no care at all. This sets the base daily progression.</RimLTC_Settings_UntendedSurvivalDays_Tip>
+
+  <RimLTC_Settings_Section_Care>Care &amp; resources</RimLTC_Settings_Section_Care>
+  <RimLTC_Settings_EfficacyHands>Hands-on comfort efficacy: {0}</RimLTC_Settings_EfficacyHands>
+  <RimLTC_Settings_EfficacyHerbal>Herbal care efficacy: {0}</RimLTC_Settings_EfficacyHerbal>
+  <RimLTC_Settings_EfficacyIndustrial>Standard hospice efficacy: {0}</RimLTC_Settings_EfficacyIndustrial>
+  <RimLTC_Settings_EfficacyHands_Tip>While cared for, daily progression is multiplied by (1 - 0.8 x efficacy). Efficacy also scales the legacy chance.</RimLTC_Settings_EfficacyHands_Tip>
+  <RimLTC_Settings_EfficacyHerbal_Tip>While cared for, daily progression is multiplied by (1 - 0.8 x efficacy). Efficacy also scales the legacy chance.</RimLTC_Settings_EfficacyHerbal_Tip>
+  <RimLTC_Settings_EfficacyIndustrial_Tip>While cared for, daily progression is multiplied by (1 - 0.8 x efficacy). Efficacy also scales the legacy chance.</RimLTC_Settings_EfficacyIndustrial_Tip>
+  <RimLTC_Settings_BaseCareDuration>Base care duration: {0} hours</RimLTC_Settings_BaseCareDuration>
+  <RimLTC_Settings_BaseCareDuration_Tip>How long one herbal tend lasts. Hands-on comfort lasts 2/3 of this, standard hospice 4/3.</RimLTC_Settings_BaseCareDuration_Tip>
+  <RimLTC_Settings_EnableFilth>Bedridden elders soil their surroundings</RimLTC_Settings_EnableFilth>
+  <RimLTC_Settings_FilthInterval>Filth interval: every {0} hours</RimLTC_Settings_FilthInterval>
+  <RimLTC_Settings_DefaultHospiceCare>Default hospice care: {0}</RimLTC_Settings_DefaultHospiceCare>
+
+  <RimLTC_Settings_Section_Legacy>Legacy &amp; passing</RimLTC_Settings_Section_Legacy>
+  <RimLTC_Settings_EnableLegacy>Elders can leave a skilltrainer of their best skill</RimLTC_Settings_EnableLegacy>
+  <RimLTC_Settings_LegacyMinSkill>Minimum skill level for a legacy: {0}</RimLTC_Settings_LegacyMinSkill>
+  <RimLTC_Settings_LegacyChanceMultiplier>Legacy chance multiplier: {0}</RimLTC_Settings_LegacyChanceMultiplier>
+  <RimLTC_Settings_LegacyChanceCap>Legacy chance cap per tend: {0}</RimLTC_Settings_LegacyChanceCap>
+  <RimLTC_Settings_LegacyLifetimeLimit>Skilltrainers per elder (lifetime): {0}</RimLTC_Settings_LegacyLifetimeLimit>
+  <RimLTC_Settings_SatisfactionMultiplier>Care satisfaction gain: {0}</RimLTC_Settings_SatisfactionMultiplier>
+  <RimLTC_Settings_SatisfactionMultiplier_Tip>How fast good care raises the hidden care satisfaction score that decides the passing thought.</RimLTC_Settings_SatisfactionMultiplier_Tip>
+  <RimLTC_Settings_MoodNeglected>Neglected passing mood: {0}</RimLTC_Settings_MoodNeglected>
+  <RimLTC_Settings_MoodRegretful>Regretful passing mood: {0}</RimLTC_Settings_MoodRegretful>
+  <RimLTC_Settings_MoodPeaceful>Peaceful passing mood: {0}</RimLTC_Settings_MoodPeaceful>
+  <RimLTC_Settings_MoodTranscendent>Transcendent passing mood: {0}</RimLTC_Settings_MoodTranscendent>
+
+  <RimLTC_Settings_Section_Tech>Disease &amp; technology</RimLTC_Settings_Section_Tech>
+  <RimLTC_Settings_EnableHeartAttack>Severe senescence can trigger a heart attack in pawns with artery blockage</RimLTC_Settings_EnableHeartAttack>
+  <RimLTC_Settings_HeartAttackChance>Heart attack chance per half day: {0}</RimLTC_Settings_HeartAttackChance>
+  <RimLTC_Settings_BionicReduction>Slowdown per artificial organ: {0}</RimLTC_Settings_BionicReduction>
+  <RimLTC_Settings_BionicReduction_Tip>Each artificial heart, lung, liver or kidney slows senescence by this much, up to 50% in total.</RimLTC_Settings_BionicReduction_Tip>
+  <RimLTC_Settings_RespectAgelessGenes>Ageless and non-senescent genes grant immunity</RimLTC_Settings_RespectAgelessGenes>
+
+  <RimLTC_Settings_Section_Targets>Who is affected</RimLTC_Settings_Section_Targets>
+  <RimLTC_Settings_TargetsAlways>Colonists and slaves are always affected.</RimLTC_Settings_TargetsAlways>
+  <RimLTC_Settings_ApplyToPrisoners>Also prisoners</RimLTC_Settings_ApplyToPrisoners>
+  <RimLTC_Settings_ApplyToAnimals>Also colony animals</RimLTC_Settings_ApplyToAnimals>
+  <RimLTC_Settings_Reset>Reset to defaults</RimLTC_Settings_Reset>
+
   <!-- Hospice care policy -->
   <RimLTC_HospiceCare>Hospice care</RimLTC_HospiceCare>
   <RimLTC_HospiceCare_NoCare>No care</RimLTC_HospiceCare_NoCare>

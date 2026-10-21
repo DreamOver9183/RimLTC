@@ -1,6 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
+  <!-- 模組設定 -->
+  <RimLTC_SettingsCategory>RimLTC - 邊緣世界：長期照護</RimLTC_SettingsCategory>
+  <RimLTC_Settings_Section_Lifespan>壽命與觸發</RimLTC_Settings_Section_Lifespan>
+  <RimLTC_Settings_TriggerMode_Absolute>以固定歲數觸發</RimLTC_Settings_TriggerMode_Absolute>
+  <RimLTC_Settings_TriggerMode_LifeExpectancy>以種族壽命期望的百分比觸發</RimLTC_Settings_TriggerMode_LifeExpectancy>
+  <RimLTC_Settings_TriggerAge>基準觸發年齡：{0} 歲</RimLTC_Settings_TriggerAge>
+  <RimLTC_Settings_TriggerLifeExpectancy>於壽命期望的 {0} 觸發</RimLTC_Settings_TriggerLifeExpectancy>
+  <RimLTC_Settings_AnimalsUseLifeExpectancy>動物一律以其壽命期望計算。</RimLTC_Settings_AnimalsUseLifeExpectancy>
+  <RimLTC_Settings_AgeStdDev>個體壽命常態浮動（標準差）：±{0} 歲</RimLTC_Settings_AgeStdDev>
+  <RimLTC_Settings_AgeStdDev_Tip>每位小人的觸發年齡會加上常態分佈的隨機偏移，避免同齡長者同時倒下。</RimLTC_Settings_AgeStdDev_Tip>
+  <RimLTC_Settings_UntendedSurvivalDays>未照護基準存活天數：{0} 天</RimLTC_Settings_UntendedSurvivalDays>
+  <RimLTC_Settings_UntendedSurvivalDays_Tip>完全不照護時，生理衰竭走完全程所需的天數。決定每日基礎惡化速率。</RimLTC_Settings_UntendedSurvivalDays_Tip>
+
+  <RimLTC_Settings_Section_Care>照護與資源</RimLTC_Settings_Section_Care>
+  <RimLTC_Settings_EfficacyHands>徒手安撫效益：{0}</RimLTC_Settings_EfficacyHands>
+  <RimLTC_Settings_EfficacyHerbal>草藥調養效益：{0}</RimLTC_Settings_EfficacyHerbal>
+  <RimLTC_Settings_EfficacyIndustrial>常規安寧效益：{0}</RimLTC_Settings_EfficacyIndustrial>
+  <RimLTC_Settings_EfficacyHands_Tip>照護期間，每日惡化乘以（1 − 0.8 × 效益）。效益也會影響技能傳承機率。</RimLTC_Settings_EfficacyHands_Tip>
+  <RimLTC_Settings_EfficacyHerbal_Tip>照護期間，每日惡化乘以（1 − 0.8 × 效益）。效益也會影響技能傳承機率。</RimLTC_Settings_EfficacyHerbal_Tip>
+  <RimLTC_Settings_EfficacyIndustrial_Tip>照護期間，每日惡化乘以（1 − 0.8 × 效益）。效益也會影響技能傳承機率。</RimLTC_Settings_EfficacyIndustrial_Tip>
+  <RimLTC_Settings_BaseCareDuration>基礎照護維持時長：{0} 小時</RimLTC_Settings_BaseCareDuration>
+  <RimLTC_Settings_BaseCareDuration_Tip>一次草藥調養的維持時間。徒手安撫為其 2/3，常規安寧為其 4/3。</RimLTC_Settings_BaseCareDuration_Tip>
+  <RimLTC_Settings_EnableFilth>臥床長者會產生排泄髒污</RimLTC_Settings_EnableFilth>
+  <RimLTC_Settings_FilthInterval>髒污生成間隔：每 {0} 小時</RimLTC_Settings_FilthInterval>
+  <RimLTC_Settings_DefaultHospiceCare>預設長照方針：{0}</RimLTC_Settings_DefaultHospiceCare>
+
+  <RimLTC_Settings_Section_Legacy>傳承與善終</RimLTC_Settings_Section_Legacy>
+  <RimLTC_Settings_EnableLegacy>長者可在床邊留下最高技能的技能訓練器</RimLTC_Settings_EnableLegacy>
+  <RimLTC_Settings_LegacyMinSkill>傳承最低技能等級門檻：{0}</RimLTC_Settings_LegacyMinSkill>
+  <RimLTC_Settings_LegacyChanceMultiplier>訓練器生成機率倍率：{0}</RimLTC_Settings_LegacyChanceMultiplier>
+  <RimLTC_Settings_LegacyChanceCap>每次照護的生成機率上限：{0}</RimLTC_Settings_LegacyChanceCap>
+  <RimLTC_Settings_LegacyLifetimeLimit>每位長者一生產出上限：{0} 個</RimLTC_Settings_LegacyLifetimeLimit>
+  <RimLTC_Settings_SatisfactionMultiplier>照護滿意度累積倍率：{0}</RimLTC_Settings_SatisfactionMultiplier>
+  <RimLTC_Settings_SatisfactionMultiplier_Tip>良好照護提升隱藏「照護滿意度」的速度；滿意度決定長者離世時殖民地的心情。</RimLTC_Settings_SatisfactionMultiplier_Tip>
+  <RimLTC_Settings_MoodNeglected>孤獨枯萎心情：{0}</RimLTC_Settings_MoodNeglected>
+  <RimLTC_Settings_MoodRegretful>遺憾離世心情：{0}</RimLTC_Settings_MoodRegretful>
+  <RimLTC_Settings_MoodPeaceful>安詳善終心情：{0}</RimLTC_Settings_MoodPeaceful>
+  <RimLTC_Settings_MoodTranscendent>圓滿典範心情：{0}</RimLTC_Settings_MoodTranscendent>
+
+  <RimLTC_Settings_Section_Tech>疾病與科技</RimLTC_Settings_Section_Tech>
+  <RimLTC_Settings_EnableHeartAttack>重度衰竭合併動脈阻塞時可能誘發急性心臟病</RimLTC_Settings_EnableHeartAttack>
+  <RimLTC_Settings_HeartAttackChance>每半天誘發機率：{0}</RimLTC_Settings_HeartAttackChance>
+  <RimLTC_Settings_BionicReduction>每個人工內臟的延緩比率：{0}</RimLTC_Settings_BionicReduction>
+  <RimLTC_Settings_BionicReduction_Tip>每個人工心、肺、肝、腎都會延緩衰竭這個比率，總計最高 50%。</RimLTC_Settings_BionicReduction_Tip>
+  <RimLTC_Settings_RespectAgelessGenes>擁有永生（Ageless）或無衰老（Non-senescent）基因者免疫</RimLTC_Settings_RespectAgelessGenes>
+
+  <RimLTC_Settings_Section_Targets>適用對象</RimLTC_Settings_Section_Targets>
+  <RimLTC_Settings_TargetsAlways>殖民者與奴隸一律適用。</RimLTC_Settings_TargetsAlways>
+  <RimLTC_Settings_ApplyToPrisoners>也套用至囚犯</RimLTC_Settings_ApplyToPrisoners>
+  <RimLTC_Settings_ApplyToAnimals>也套用至殖民地動物</RimLTC_Settings_ApplyToAnimals>
+  <RimLTC_Settings_Reset>重設為預設值</RimLTC_Settings_Reset>
+
   <!-- 長照方針 -->
   <RimLTC_HospiceCare>長照方針</RimLTC_HospiceCare>
   <RimLTC_HospiceCare_NoCare>放棄照護</RimLTC_HospiceCare_NoCare>
