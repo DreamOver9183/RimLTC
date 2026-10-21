@@ -11,6 +11,7 @@ namespace RimLTC
         static HarmonyInit()
         {
             new Harmony(HarmonyId).PatchAll();
+            PassingUtility.ApplyMoodSettings();
         }
     }
 }

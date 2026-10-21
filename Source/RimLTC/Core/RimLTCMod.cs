@@ -11,5 +11,14 @@ namespace RimLTC
         {
             Settings = GetSettings<RimLTCSettings>();
         }
+
+        public override void WriteSettings()
+        {
+            base.WriteSettings();
+            if (RimLTCDefOf.RimLTC_NeglectedPassing != null)
+            {
+                PassingUtility.ApplyMoodSettings();
+            }
+        }
     }
 }

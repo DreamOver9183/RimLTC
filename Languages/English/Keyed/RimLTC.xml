@@ -14,6 +14,13 @@
   <RimLTC_HospiceCare_SetAll>Set all to: {0}</RimLTC_HospiceCare_SetAll>
   <RimLTC_HospiceCare_HeaderTip>Left-click: set the hospice care policy for everyone in this list.\nRight-click: sort.</RimLTC_HospiceCare_HeaderTip>
 
+  <!-- Legacy & passing -->
+  <RimLTC_LegacyProduced>{PAWN_labelShort} has passed on a lifetime of {1} experience. A {2} was left by the bedside.</RimLTC_LegacyProduced>
+  <RimLTC_PassingMessage_RimLTC_NeglectedPassing>{PAWN_labelShort} passed away alone, in pain and without care.</RimLTC_PassingMessage_RimLTC_NeglectedPassing>
+  <RimLTC_PassingMessage_RimLTC_RegretfulPassing>{PAWN_labelShort} has passed away. Someone was there at the end, but regrets remain.</RimLTC_PassingMessage_RimLTC_RegretfulPassing>
+  <RimLTC_PassingMessage_RimLTC_PeacefulPassing>{PAWN_labelShort} passed away peacefully, surrounded by care.</RimLTC_PassingMessage_RimLTC_PeacefulPassing>
+  <RimLTC_PassingMessage_RimLTC_TranscendentPassing>{PAWN_labelShort} completed a legendary life with dignity and without regret. The whole colony is inspired.</RimLTC_PassingMessage_RimLTC_TranscendentPassing>
+
   <!-- Health events -->
   <RimLTC_CascadeComplication>{PAWN_labelShort}'s failing body could not cope any longer: {1}.</RimLTC_CascadeComplication>
 

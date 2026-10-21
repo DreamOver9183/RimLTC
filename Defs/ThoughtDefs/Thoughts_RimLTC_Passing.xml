@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Mood values are overwritten at startup from the mod settings. -->
+
+  <ThoughtDef Name="RimLTC_PassingThoughtBase" Abstract="True">
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <stackLimit>3</stackLimit>
+    <stackedEffectMultiplier>0.75</stackedEffectMultiplier>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+    </nullifyingTraits>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="RimLTC_PassingThoughtBase">
+    <defName>RimLTC_NeglectedPassing</defName>
+    <durationDays>6</durationDays>
+    <stages>
+      <li>
+        <label>neglected passing</label>
+        <description>We let our elder die alone, in pain and without care.</description>
+        <baseMoodEffect>-12</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="RimLTC_PassingThoughtBase">
+    <defName>RimLTC_RegretfulPassing</defName>
+    <durationDays>4</durationDays>
+    <stages>
+      <li>
+        <label>regretful passing</label>
+        <description>Our elder is gone. Someone was there at the end, but the pain never really left. I wish we had done more.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="RimLTC_PassingThoughtBase">
+    <defName>RimLTC_PeacefulPassing</defName>
+    <durationDays>4</durationDays>
+    <stages>
+      <li>
+        <label>peaceful passing</label>
+        <description>Our elder passed away peacefully. It still hurts, but we gave them a warm farewell.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+      <li>
+        <label>peaceful passing</label>
+        <description>Our elder passed away peacefully after a long life. We gave them the warmest farewell we could.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="RimLTC_PassingThoughtBase">
+    <defName>RimLTC_TranscendentPassing</defName>
+    <durationDays>6</durationDays>
+    <stages>
+      <li>
+        <label>transcendent passing</label>
+        <description>Our elder completed a legendary life without regret and with dignity. Their peaceful end inspires us all.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

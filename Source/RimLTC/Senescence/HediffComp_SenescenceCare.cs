@@ -23,6 +23,8 @@ namespace RimLTC
         private const int HalfDayHours = 12;
         private const int BedriddenStageIndex = 1;
 
+        /// <summary>Hidden 0-100 score that decides the passing thought.</summary>
+        public float careSatisfaction = CareSatisfactionUtility.Initial;
         public MedicalCareCategory lastCareTier = MedicalCareCategory.NoCare;
         public float lastTendQuality;
         private int hoursSinceHalfDayCheck;
@@ -81,10 +83,14 @@ namespace RimLTC
             {
                 TendComp.tendTicksLeft = HospiceCareUtility.CareDurationTicks(tier);
             }
+            careSatisfaction = CareSatisfactionUtility.AfterTend(careSatisfaction, tier, lastTendQuality, Pawn);
+            LegacyUtility.TryProduceLegacy(Pawn, parent.CurStageIndex, tier, lastTendQuality);
         }
 
         private void HalfDayCheck()
         {
+            careSatisfaction = Mathf.Max(0f,
+                careSatisfaction - CareSatisfactionUtility.NeglectPenalty(Pawn, IsCaredFor));
             TryCascadeComplication();
         }
 
@@ -134,6 +140,7 @@ namespace RimLTC
         public override void CompExposeData()
         {
             base.CompExposeData();
+            Scribe_Values.Look(ref careSatisfaction, "careSatisfaction", CareSatisfactionUtility.Initial);
             Scribe_Values.Look(ref lastCareTier, "lastCareTier", MedicalCareCategory.NoCare);
             Scribe_Values.Look(ref lastTendQuality, "lastTendQuality");
             Scribe_Values.Look(ref hoursSinceHalfDayCheck, "hoursSinceHalfDayCheck");
@@ -142,7 +149,8 @@ namespace RimLTC
 
         public override string CompDebugString()
         {
-            return "care tier: " + lastCareTier
+            return "care satisfaction: " + careSatisfaction.ToString("F1")
+                + "\ncare tier: " + lastCareTier
                 + "\ncared for: " + IsCaredFor
                 + "\nprogression/day: " + (HourlyProgression * GenDate.HoursPerDay).ToString("F4");
         }

@@ -14,6 +14,13 @@
   <RimLTC_HospiceCare_SetAll>全部設為：{0}</RimLTC_HospiceCare_SetAll>
   <RimLTC_HospiceCare_HeaderTip>左鍵：為清單中所有人設定長照方針。\n右鍵：排序。</RimLTC_HospiceCare_HeaderTip>
 
+  <!-- 傳承與善終 -->
+  <RimLTC_LegacyProduced>{PAWN_labelShort} 將畢生的{1}經驗傳承了下來，床邊留下了一個{2}。</RimLTC_LegacyProduced>
+  <RimLTC_PassingMessage_RimLTC_NeglectedPassing>{PAWN_labelShort} 在痛苦與無人照料的孤獨中離世了。</RimLTC_PassingMessage_RimLTC_NeglectedPassing>
+  <RimLTC_PassingMessage_RimLTC_RegretfulPassing>{PAWN_labelShort} 離世了。最後一段路雖有人陪伴，仍留下些許遺憾。</RimLTC_PassingMessage_RimLTC_RegretfulPassing>
+  <RimLTC_PassingMessage_RimLTC_PeacefulPassing>{PAWN_labelShort} 在溫暖的陪伴中安詳地走完了一生。</RimLTC_PassingMessage_RimLTC_PeacefulPassing>
+  <RimLTC_PassingMessage_RimLTC_TranscendentPassing>{PAWN_labelShort} 毫無遺憾、充滿尊嚴地走完了傳奇的一生，激勵了殖民地的每一個人。</RimLTC_PassingMessage_RimLTC_TranscendentPassing>
+
   <!-- 健康事件 -->
   <RimLTC_CascadeComplication>{PAWN_labelShort} 衰竭的身體再也撐不住了：{1}。</RimLTC_CascadeComplication>
 
