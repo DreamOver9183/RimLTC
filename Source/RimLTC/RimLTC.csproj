@@ -22,7 +22,9 @@
     <DefineConstants>$(DefineConstants);RW16</DefineConstants>
   </PropertyGroup>
 
+  <!-- RimWorld 1.7 (unstable) moved to .NET 10; building it needs the .NET 10 SDK. -->
   <PropertyGroup Condition="'$(RimWorldVersion)' == '1.7'">
+    <TargetFramework>net10.0</TargetFramework>
     <RimWorldRefVersion>1.7.*-*</RimWorldRefVersion>
     <DefineConstants>$(DefineConstants);RW17</DefineConstants>
   </PropertyGroup>
@@ -30,6 +32,9 @@
   <ItemGroup>
     <PackageReference Include="Krafs.Rimworld.Ref" Version="$(RimWorldRefVersion)" ExcludeAssets="runtime" PrivateAssets="all" />
     <PackageReference Include="Lib.Harmony.Ref" Version="2.3.6" ExcludeAssets="runtime" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net472'">
     <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
   </ItemGroup>
 

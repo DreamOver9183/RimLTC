@@ -77,13 +77,13 @@
 ## 已知限制
 
 - 原版醫療方針設為「不照護」時，原版的入口檢查會讓醫生完全不照護該小人，此時長照方針也不會生效。
-- 1.7 尚未正式支援。在 1.7 中會沿用 1.6 的組件（見 `LoadFolders.xml`），可以用 `-p:RimWorldVersion=1.7` 另行編譯。
+- 1.7 尚未正式支援。1.7 unstable 已改用 .NET 10（參考組件目標為 `net10.0`）。目前程式碼可以成功編譯 1.7.4984-unstable 版本，但尚未在遊戲中實測。在 1.7 中，`LoadFolders.xml` 暫時沿用 1.6 的 net472 組件，不保證能載入；正式支援時，請用 .NET 10 SDK 編譯 1.7 版，並把 `LoadFolders.xml` 的 `v1.7` 改指向 `1.7`。
 - 健康分頁的按鈕位置是用 transpiler 掛在原版醫療方針按鈕之後。若遊戲版本或其他模組改變了這段 UI，會自動改為顯示在概觀最下方。
 
 ## 開發
 
 ```bash
-# 需要 .NET SDK 8+；RimWorld 與 Harmony 的參考組件由 NuGet 提供
+# 1.6 需要 .NET SDK 8+，1.7 需要 .NET SDK 10+；RimWorld 與 Harmony 的參考組件由 NuGet 提供
 dotnet build Source/RimLTC/RimLTC.csproj -c Release          # 輸出到 1.6/Assemblies
 dotnet build Source/RimLTC/RimLTC.csproj -c Release -p:RimWorldVersion=1.7   # 輸出到 1.7/Assemblies
 ```
