@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <HediffDef>
+    <defName>RimLTC_NaturalSenescence</defName>
+    <label>natural senescence</label>
+    <description>The body is slowly and irreversibly winding down at the end of a long life. It begins as frailty, leaves the elder bedridden and finally ends in a natural death.\n\nRegular hospice care slows the decline, and the quality of that care is remembered by everyone when the elder passes away.</description>
+    <hediffClass>RimLTC.Hediff_Senescence</hediffClass>
+    <defaultLabelColor>(0.80, 0.72, 0.60)</defaultLabelColor>
+    <initialSeverity>0.01</initialSeverity>
+    <maxSeverity>1</maxSeverity>
+    <lethalSeverity>1</lethalSeverity>
+    <tendable>true</tendable>
+    <chronic>true</chronic>
+    <isBad>true</isBad>
+    <makesAlert>false</makesAlert>
+    <everCurableByItem>false</everCurableByItem>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <comps>
+      <li Class="HediffCompProperties_TendDuration">
+        <baseTendDurationHours>12</baseTendDurationHours>
+        <tendOverlapHours>2</tendOverlapHours>
+        <disappearsAtTotalTendQuality>-1</disappearsAtTotalTendQuality>
+        <showTendQuality>true</showTendQuality>
+        <labelTendedWell>cared for</labelTendedWell>
+        <labelSolidTendedWell>cared for</labelSolidTendedWell>
+      </li>
+      <!-- Must stay after TendDuration: it overrides the tend duration per care tier. -->
+      <li Class="RimLTC.HediffCompProperties_SenescenceCare" />
+    </comps>
+    <stages>
+      <li>
+        <label>early frailty</label>
+        <painOffset>0.10</painOffset>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.20</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>0.40</minSeverity>
+        <label>bedridden</label>
+        <painOffset>0.25</painOffset>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <setMax>0.29</setMax>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <setMax>0</setMax>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>0.80</minSeverity>
+        <label>end of life</label>
+        <lifeThreatening>true</lifeThreatening>
+        <painOffset>0.40</painOffset>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <setMax>0.10</setMax>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <setMax>0</setMax>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+    <modExtensions>
+      <li Class="RimLTC.SenescenceExtension">
+        <!-- Vanilla filth spawned around a bedridden elder (soiled bedding). -->
+        <filthDef>Filth_Vomit</filthDef>
+        <!-- Chronic conditions that can escalate into the cascade hediff. -->
+        <cascadeTriggerHediffs>
+          <li>HeartArteryBlockage</li>
+        </cascadeTriggerHediffs>
+        <cascadeHediff>HeartAttack</cascadeHediff>
+        <cascadeMinSeverity>0.5</cascadeMinSeverity>
+        <!-- Genes that make a pawn immune to natural senescence. -->
+        <immuneGenes>
+          <li MayRequire="Ludeon.RimWorld.Biotech">Ageless</li>
+          <li MayRequire="Ludeon.RimWorld.Biotech">DiseaseFree</li>
+        </immuneGenes>
+      </li>
+    </modExtensions>
+  </HediffDef>
+
+</Defs>
