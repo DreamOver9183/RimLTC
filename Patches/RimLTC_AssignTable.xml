@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- Hospice care column in the Assign tab: after the medical care column if the
+       table has one, otherwise before the trailing filler column, otherwise last. -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/PawnTableDef[defName="Assign"]/columns/li[text()="MedicalCare"]</xpath>
+    <match Class="PatchOperationInsert">
+      <xpath>/Defs/PawnTableDef[defName="Assign"]/columns/li[text()="MedicalCare"]</xpath>
+      <order>Append</order>
+      <value>
+        <li>RimLTC_HospiceCare</li>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationConditional">
+      <xpath>/Defs/PawnTableDef[defName="Assign"]/columns/li[text()="RemainingSpace"]</xpath>
+      <match Class="PatchOperationInsert">
+        <xpath>/Defs/PawnTableDef[defName="Assign"]/columns/li[text()="RemainingSpace"]</xpath>
+        <value>
+          <li>RimLTC_HospiceCare</li>
+        </value>
+      </match>
+      <nomatch Class="PatchOperationConditional">
+        <xpath>/Defs/PawnTableDef[defName="Assign"]/columns</xpath>
+        <match Class="PatchOperationAdd">
+          <xpath>/Defs/PawnTableDef[defName="Assign"]/columns</xpath>
+          <value>
+            <li>RimLTC_HospiceCare</li>
+          </value>
+        </match>
+      </nomatch>
+    </nomatch>
+  </Operation>
+
+</Patch>

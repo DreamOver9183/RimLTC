@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <PawnColumnDef>
+    <defName>RimLTC_HospiceCare</defName>
+    <label>hospice care</label>
+    <headerTip>The long-term care policy used when natural senescence is the only thing that needs tending. Wounds and diseases always follow the medical care policy.</headerTip>
+    <workerClass>RimLTC.PawnColumnWorker_HospiceCare</workerClass>
+    <sortable>true</sortable>
+    <paintable>true</paintable>
+  </PawnColumnDef>
+
+</Defs>

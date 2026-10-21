@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
+  <!-- 長照方針 -->
+  <RimLTC_HospiceCare>長照方針</RimLTC_HospiceCare>
+  <RimLTC_HospiceCare_NoCare>放棄照護</RimLTC_HospiceCare_NoCare>
+  <RimLTC_HospiceCare_NoCare_Desc>不派醫護照料長者的生理衰竭。衰竭會全速惡化，臥床時伴隨失禁髒污，長者將在無人照料中離世。</RimLTC_HospiceCare_NoCare_Desc>
+  <RimLTC_HospiceCare_NoMeds>徒手安撫</RimLTC_HospiceCare_NoMeds>
+  <RimLTC_HospiceCare_NoMeds_Desc>醫生不使用藥品，純以人力為長者翻身、擦拭與安撫。稍微延緩衰竭，但最多只能換來「遺憾離世」。</RimLTC_HospiceCare_NoMeds_Desc>
+  <RimLTC_HospiceCare_HerbalOrWorse>草藥調養</RimLTC_HospiceCare_HerbalOrWorse>
+  <RimLTC_HospiceCare_HerbalOrWorse_Desc>醫生使用草藥（或不用藥）鎮痛調理。明顯延緩衰竭，可達成「安詳善終」。</RimLTC_HospiceCare_HerbalOrWorse_Desc>
+  <RimLTC_HospiceCare_NormalOrWorse>常規安寧</RimLTC_HospiceCare_NormalOrWorse>
+  <RimLTC_HospiceCare_NormalOrWorse_Desc>醫生使用一般醫療包（或更低等級）。最大程度延緩衰竭；搭配舒適床鋪與整潔房間，可達成「圓滿典範」。\n\n長照永遠不會使用閃耀世界藥品。外傷與疾病仍依照原版醫療方針處理。</RimLTC_HospiceCare_NormalOrWorse_Desc>
+  <RimLTC_HospiceCare_SetAll>全部設為：{0}</RimLTC_HospiceCare_SetAll>
+  <RimLTC_HospiceCare_HeaderTip>左鍵：為清單中所有人設定長照方針。\n右鍵：排序。</RimLTC_HospiceCare_HeaderTip>
+
   <!-- 健康事件 -->
   <RimLTC_CascadeComplication>{PAWN_labelShort} 衰竭的身體再也撐不住了：{1}。</RimLTC_CascadeComplication>
 

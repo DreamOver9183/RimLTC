@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
+  <!-- Hospice care policy -->
+  <RimLTC_HospiceCare>Hospice care</RimLTC_HospiceCare>
+  <RimLTC_HospiceCare_NoCare>No care</RimLTC_HospiceCare_NoCare>
+  <RimLTC_HospiceCare_NoCare_Desc>Nobody tends to the elder's senescence. It progresses at full speed, the elder soils their surroundings and they will pass away neglected.</RimLTC_HospiceCare_NoCare_Desc>
+  <RimLTC_HospiceCare_NoMeds>Hands-on comfort</RimLTC_HospiceCare_NoMeds>
+  <RimLTC_HospiceCare_NoMeds_Desc>Doctors turn, wash and comfort the elder without using medicine. Slows senescence a little, but at best the colony will remember a regretful passing.</RimLTC_HospiceCare_NoMeds_Desc>
+  <RimLTC_HospiceCare_HerbalOrWorse>Herbal care</RimLTC_HospiceCare_HerbalOrWorse>
+  <RimLTC_HospiceCare_HerbalOrWorse_Desc>Doctors use herbal medicine (or none) to ease pain. Slows senescence noticeably and can earn a peaceful passing.</RimLTC_HospiceCare_HerbalOrWorse_Desc>
+  <RimLTC_HospiceCare_NormalOrWorse>Standard hospice</RimLTC_HospiceCare_NormalOrWorse>
+  <RimLTC_HospiceCare_NormalOrWorse_Desc>Doctors use industrial medicine (or worse). Slows senescence the most. Together with a comfortable bed and a clean room it can earn a transcendent passing.\n\nGlitterworld medicine is never used for hospice care. Wounds and diseases still follow the medical care policy.</RimLTC_HospiceCare_NormalOrWorse_Desc>
+  <RimLTC_HospiceCare_SetAll>Set all to: {0}</RimLTC_HospiceCare_SetAll>
+  <RimLTC_HospiceCare_HeaderTip>Left-click: set the hospice care policy for everyone in this list.\nRight-click: sort.</RimLTC_HospiceCare_HeaderTip>
+
   <!-- Health events -->
   <RimLTC_CascadeComplication>{PAWN_labelShort}'s failing body could not cope any longer: {1}.</RimLTC_CascadeComplication>
 
