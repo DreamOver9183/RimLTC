@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>RimLTC - Rim Long-Term Care</name>
+  <author>DreamOver9183</author>
+  <packageId>DreamOver.RimLTC</packageId>
+  <url>https://github.com/DreamOver9183/RimLTC</url>
+  <supportedVersions>
+    <li>1.6</li>
+  </supportedVersions>
+  <modDependencies>
+    <li>
+      <packageId>brrainz.harmony</packageId>
+      <displayName>Harmony</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+      <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>brrainz.harmony</li>
+    <li>Ludeon.RimWorld</li>
+    <li>Ludeon.RimWorld.Royalty</li>
+    <li>Ludeon.RimWorld.Ideology</li>
+    <li>Ludeon.RimWorld.Biotech</li>
+    <li>Ludeon.RimWorld.Anomaly</li>
+    <li>Ludeon.RimWorld.Odyssey</li>
+  </loadAfter>
+  <description>A lightweight, vanilla-friendly old-age, hospice care and legacy mod.
+
+Elderly pawns eventually develop Natural Senescence: a single three-stage condition (frail, bedridden, terminal) that ends in a natural death. Caring for them uses only vanilla jobs (feeding, cleaning, tending) and a separate hospice care policy (no care / hands only / herbal / industrial) that never wastes glitterworld medicine.
+
+Good long-term care is rewarded: elders may leave a skilltrainer of their best skill by their bedside, and a hidden care satisfaction score decides how the colony feels about their passing (neglected, regretful, peaceful or transcendent).
+
+Bionic organs, the biosculpter pod and Biotech ageless genes are all taken into account.
+
+極致輕量、貼合原版的老年衰亡、安寧長照與技藝傳承模組。高齡殖民者會進入「生理衰竭」三階段（初期虛弱、臥床失能、臨終彌留）並自然壽終；長照完全沿用原版的餵食、清潔、照護工作，並提供與醫療方針分流的「長照方針」。妥善照護的長者可能在床邊留下技能訓練器，隱藏的照護滿意度則決定殖民地面對其離世時的四階心情。</description>
+</ModMetaData>

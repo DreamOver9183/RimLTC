@@ -1,0 +1,10 @@
+# Build intermediates
+Source/**/obj/
+Source/**/bin/
+*.user
+*.suo
+.vs/
+.idea/
+
+# Build output is committed for 1.6 only (drop-in mod); ignore debug symbols
+*.pdb

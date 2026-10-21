@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<loadFolders>
+  <v1.6>
+    <li>/</li>
+    <li>1.6</li>
+  </v1.6>
+  <!-- 1.7 is not officially supported yet. Until a dedicated 1.7 build is
+       placed in 1.7/Assemblies, 1.7 falls back to the 1.6 assembly. -->
+  <v1.7>
+    <li>/</li>
+    <li>1.6</li>
+  </v1.7>
+</loadFolders>
