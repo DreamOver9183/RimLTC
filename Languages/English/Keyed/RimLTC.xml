@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Health events -->
+  <RimLTC_CascadeComplication>{PAWN_labelShort}'s failing body could not cope any longer: {1}.</RimLTC_CascadeComplication>
+
+</LanguageData>

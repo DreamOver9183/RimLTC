@@ -24,6 +24,53 @@ namespace RimLTC
             return tier > MedicalCareCategory.NormalOrWorse ? MedicalCareCategory.NormalOrWorse : tier;
         }
 
+        public static MedicalCareCategory GetHospiceCare(Pawn pawn)
+        {
+            CompHospiceSettings comp = pawn?.TryGetComp<CompHospiceSettings>();
+            return comp != null ? comp.HospiceCare : Clamp(Settings.defaultHospiceCare);
+        }
+
+        public static void SetHospiceCare(Pawn pawn, MedicalCareCategory tier)
+        {
+            CompHospiceSettings comp = pawn?.TryGetComp<CompHospiceSettings>();
+            if (comp != null)
+            {
+                comp.HospiceCare = tier;
+            }
+        }
+
+        /// <summary>
+        /// True when senescence needs tending and nothing else does (no wounds,
+        /// diseases or other tendable conditions).
+        /// </summary>
+        public static bool OnlyNeedsHospiceCare(Pawn patient, out MedicalCareCategory hospiceCare)
+        {
+            hospiceCare = MedicalCareCategory.NoCare;
+            if (patient?.health?.hediffSet == null)
+            {
+                return false;
+            }
+            bool senescenceNeedsCare = false;
+            foreach (Hediff hediff in patient.health.hediffSet.hediffs)
+            {
+                if (!hediff.TendableNow())
+                {
+                    continue;
+                }
+                if (!(hediff is Hediff_Senescence))
+                {
+                    return false;
+                }
+                senescenceNeedsCare = true;
+            }
+            if (!senescenceNeedsCare)
+            {
+                return false;
+            }
+            hospiceCare = GetHospiceCare(patient);
+            return true;
+        }
+
         public static float Efficacy(MedicalCareCategory tier)
         {
             switch (Clamp(tier))

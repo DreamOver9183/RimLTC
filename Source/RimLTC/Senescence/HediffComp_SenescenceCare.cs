@@ -1,4 +1,6 @@
+using System.Linq;
 using RimWorld;
+using UnityEngine;
 using Verse;
 
 namespace RimLTC
@@ -13,16 +15,18 @@ namespace RimLTC
 
     /// <summary>
     /// Drives senescence progression and keeps the hidden care state of one elder.
-    /// All work runs once per in-game hour.
+    /// All periodic work runs once per in-game hour.
     /// </summary>
     public class HediffComp_SenescenceCare : HediffComp
     {
         public const int UpdateIntervalTicks = GenDate.TicksPerHour;
         private const int HalfDayHours = 12;
+        private const int BedriddenStageIndex = 1;
 
         public MedicalCareCategory lastCareTier = MedicalCareCategory.NoCare;
         public float lastTendQuality;
         private int hoursSinceHalfDayCheck;
+        private int hoursSinceFilth;
 
         private HediffComp_TendDuration tendComp;
 
@@ -32,6 +36,8 @@ namespace RimLTC
 
         /// <summary>Whether the last hospice tend is still in effect.</summary>
         public bool IsCaredFor => lastCareTier > MedicalCareCategory.NoCare && TendComp != null && TendComp.IsTended;
+
+        public bool IsBedridden => parent.CurStageIndex >= BedriddenStageIndex;
 
         public float HourlyProgression
         {
@@ -50,6 +56,13 @@ namespace RimLTC
             }
             severityAdjustment += HourlyProgression;
 
+            hoursSinceFilth++;
+            if (hoursSinceFilth >= Settings.filthIntervalHours)
+            {
+                hoursSinceFilth = 0;
+                TryMakeFilth();
+            }
+
             hoursSinceHalfDayCheck++;
             if (hoursSinceHalfDayCheck >= HalfDayHours)
             {
@@ -58,8 +71,64 @@ namespace RimLTC
             }
         }
 
+        public override void CompTended(float quality, float maxQuality, int batchPosition = 0)
+        {
+            base.CompTended(quality, maxQuality, batchPosition);
+            MedicalCareCategory tier = HospiceCareUtility.TierFromMedicine(Patch_DoTend.CurrentMedicine);
+            lastCareTier = tier;
+            lastTendQuality = Mathf.Clamp01(quality);
+            if (TendComp != null)
+            {
+                TendComp.tendTicksLeft = HospiceCareUtility.CareDurationTicks(tier);
+            }
+        }
+
         private void HalfDayCheck()
         {
+            TryCascadeComplication();
+        }
+
+        /// <summary>Soiled bedding: vanilla filth that vanilla cleaners take care of.</summary>
+        private void TryMakeFilth()
+        {
+            if (!Settings.enableFilth || !IsBedridden || !Pawn.Spawned)
+            {
+                return;
+            }
+            ThingDef filth = SenescenceExtension.Get?.filthDef;
+            if (filth != null)
+            {
+                FilthMaker.TryMakeFilth(Pawn.Position, Pawn.Map, filth, Pawn.LabelIndefinite());
+            }
+        }
+
+        /// <summary>Severe senescence can turn an existing heart condition into a heart attack.</summary>
+        private void TryCascadeComplication()
+        {
+            SenescenceExtension ext = SenescenceExtension.Get;
+            if (!Settings.enableHeartAttack || ext?.cascadeHediff == null || parent.Severity < ext.cascadeMinSeverity)
+            {
+                return;
+            }
+            HediffSet hediffSet = Pawn.health.hediffSet;
+            if (hediffSet.HasHediff(ext.cascadeHediff)
+                || !ext.cascadeTriggerHediffs.Any(h => h != null && hediffSet.HasHediff(h))
+                || !Rand.Chance(Settings.heartAttackChance))
+            {
+                return;
+            }
+            BodyPartRecord heart = Pawn.RaceProps.body.GetPartsWithDef(BodyPartDefOf.Heart)
+                .FirstOrDefault(p => !hediffSet.PartIsMissing(p) && !hediffSet.HasDirectlyAddedPartFor(p));
+            if (heart == null)
+            {
+                return;
+            }
+            Pawn.health.AddHediff(ext.cascadeHediff, heart);
+            if (PawnUtility.ShouldSendNotificationAbout(Pawn))
+            {
+                Messages.Message("RimLTC_CascadeComplication".Translate(Pawn.Named("PAWN"), ext.cascadeHediff.label),
+                    Pawn, MessageTypeDefOf.NegativeHealthEvent);
+            }
         }
 
         public override void CompExposeData()
@@ -68,6 +137,7 @@ namespace RimLTC
             Scribe_Values.Look(ref lastCareTier, "lastCareTier", MedicalCareCategory.NoCare);
             Scribe_Values.Look(ref lastTendQuality, "lastTendQuality");
             Scribe_Values.Look(ref hoursSinceHalfDayCheck, "hoursSinceHalfDayCheck");
+            Scribe_Values.Look(ref hoursSinceFilth, "hoursSinceFilth");
         }
 
         public override string CompDebugString()

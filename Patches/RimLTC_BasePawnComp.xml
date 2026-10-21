@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- Per-pawn hospice care policy and legacy counter. -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/ThingDef[@Name="BasePawn"]</xpath>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationConditional">
+          <xpath>/Defs/ThingDef[@Name="BasePawn"]/comps</xpath>
+          <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[@Name="BasePawn"]</xpath>
+            <value>
+              <comps />
+            </value>
+          </nomatch>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[@Name="BasePawn"]/comps</xpath>
+          <value>
+            <li Class="RimLTC.CompProperties_HospiceSettings" />
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+</Patch>

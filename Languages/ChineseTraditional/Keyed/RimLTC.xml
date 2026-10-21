@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- 健康事件 -->
+  <RimLTC_CascadeComplication>{PAWN_labelShort} 衰竭的身體再也撐不住了：{1}。</RimLTC_CascadeComplication>
+
+</LanguageData>
