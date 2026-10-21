@@ -31,6 +31,7 @@ namespace RimLTC
         private int hoursSinceFilth;
 
         private HediffComp_TendDuration tendComp;
+        private float cachedBionicReduction = -1f;
 
         private static RimLTCSettings Settings => RimLTCMod.Settings;
 
@@ -41,12 +42,25 @@ namespace RimLTC
 
         public bool IsBedridden => parent.CurStageIndex >= BedriddenStageIndex;
 
+        /// <summary>Recomputed every half day; artificial organs rarely change.</summary>
+        public float BionicReduction
+        {
+            get
+            {
+                if (cachedBionicReduction < 0f)
+                {
+                    cachedBionicReduction = SenescenceUtility.BionicReduction(Pawn);
+                }
+                return cachedBionicReduction;
+            }
+        }
+
         public float HourlyProgression
         {
             get
             {
                 float factor = IsCaredFor ? HospiceCareUtility.ProgressionFactor(lastCareTier) : 1f;
-                return SenescenceUtility.BaseDailyProgression / GenDate.HoursPerDay * factor;
+                return SenescenceUtility.BaseDailyProgression / GenDate.HoursPerDay * factor * (1f - BionicReduction);
             }
         }
 
@@ -89,6 +103,7 @@ namespace RimLTC
 
         private void HalfDayCheck()
         {
+            cachedBionicReduction = -1f;
             careSatisfaction = Mathf.Max(0f,
                 careSatisfaction - CareSatisfactionUtility.NeglectPenalty(Pawn, IsCaredFor));
             TryCascadeComplication();
@@ -152,6 +167,7 @@ namespace RimLTC
             return "care satisfaction: " + careSatisfaction.ToString("F1")
                 + "\ncare tier: " + lastCareTier
                 + "\ncared for: " + IsCaredFor
+                + "\nbionic reduction: " + BionicReduction.ToStringPercent()
                 + "\nprogression/day: " + (HourlyProgression * GenDate.HoursPerDay).ToString("F4");
         }
     }

@@ -23,5 +23,6 @@
 
   <!-- 健康事件 -->
   <RimLTC_CascadeComplication>{PAWN_labelShort} 衰竭的身體再也撐不住了：{1}。</RimLTC_CascadeComplication>
+  <RimLTC_BiosculpterReducedSenescence>年齡逆轉週期同時減輕了 {PAWN_labelShort} 的生理衰竭。</RimLTC_BiosculpterReducedSenescence>
 
 </LanguageData>

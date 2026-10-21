@@ -23,5 +23,6 @@
 
   <!-- Health events -->
   <RimLTC_CascadeComplication>{PAWN_labelShort}'s failing body could not cope any longer: {1}.</RimLTC_CascadeComplication>
+  <RimLTC_BiosculpterReducedSenescence>The age reversal cycle also eased {PAWN_labelShort}'s natural senescence.</RimLTC_BiosculpterReducedSenescence>
 
 </LanguageData>

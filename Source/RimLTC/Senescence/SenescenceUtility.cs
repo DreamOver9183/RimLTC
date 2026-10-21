@@ -116,6 +116,40 @@ namespace RimLTC
             pawn.health.AddHediff(RimLTCDefOf.RimLTC_NaturalSenescence);
         }
 
+        /// <summary>Maximum share of the progression that artificial organs can remove.</summary>
+        public const float MaxBionicReduction = 0.5f;
+
+        private static BodyPartDef liverDef;
+        private static BodyPartDef kidneyDef;
+
+        /// <summary>
+        /// Each artificial heart, lung, liver or kidney slows progression by the
+        /// configured share, up to 50%. The brain still ages, so death still comes.
+        /// </summary>
+        public static float BionicReduction(Pawn pawn)
+        {
+            if (liverDef == null)
+            {
+                liverDef = DefDatabase<BodyPartDef>.GetNamedSilentFail("Liver");
+                kidneyDef = DefDatabase<BodyPartDef>.GetNamedSilentFail("Kidney");
+            }
+            int organs = 0;
+            foreach (Hediff hediff in pawn.health.hediffSet.hediffs)
+            {
+                if (!(hediff is Hediff_AddedPart) || hediff.Part == null)
+                {
+                    continue;
+                }
+                BodyPartDef part = hediff.Part.def;
+                if (part == BodyPartDefOf.Heart || part == BodyPartDefOf.Lung
+                    || (part != null && (part == liverDef || part == kidneyDef)))
+                {
+                    organs++;
+                }
+            }
+            return Mathf.Min(organs * Settings.bionicReductionPerOrgan, MaxBionicReduction);
+        }
+
         /// <summary>Severity gained per day without any care.</summary>
         public static float BaseDailyProgression => 1f / Mathf.Max(1f, Settings.untendedSurvivalDays);
     }
